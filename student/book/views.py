@@ -195,6 +195,4 @@ def forgot(request):
      return render(request, 'forgot.html')
 
 def wishlist(request):
-
-
      return render(request, 'wishlist.html')
