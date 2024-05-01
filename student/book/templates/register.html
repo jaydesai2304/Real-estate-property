@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> The Dream House </title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  {% block content %}
+
+  <div class="container">
+    
+    {% for message in messages %}
+    
+      <div class="alert">
+        {{ message }}
+      </div>
+    
+    {% endfor %}
+    <div class="title">Create an Account</div>
+    <div class="content">
+      <form action="" method="post">
+        {% csrf_token %}
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Full Name</span>
+            <input type="text" placeholder="Enter your name" name="fullname" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Username</span>
+            <input type="text" placeholder="Enter your username" name="username" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="email" placeholder="Enter your email" name="email" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="text" placeholder="Enter your number" name="phone_no" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="password" placeholder="Enter your password" name="password" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Confirm Password</span>
+            <input type="password" placeholder="Confirm your password" name="confirm_password" required>
+          </div>
+        </div>
+        <div class="input-box" style="margin-top: -10px;">
+          <span class="details" >Gender</span>
+          <select id="gender" name="gender" required >
+              <option value="" disabled selected>Select your gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+          </select>
+      </div>
+        <div class="button">
+          <input type="submit" value="Register">
+        </div>
+        <p>Already have an account? <a href="/">login</a></p>
+      </form>
+      {% endblock %}
+    </div>
+  </div>
+</body>
+</html>

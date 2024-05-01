@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title>The Dream House</title>
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="div-img">
+    {% block content %}
+  <div class="container" style="opacity: 1;">
+    {% for message in messages %}
+  
+      <div class="alert">
+        {{ message }}
+      </div>
+    
+    {% endfor %}
+    <div class="title">Login</div>  
+    <div class="content">
+      <form action="" method="post">
+        {% csrf_token %}
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Username</span>
+            <input type="text" placeholder="Enter your username" name="username" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="password" placeholder="Enter your password" name="password" required>
+          </div>
+          </div>
+        </div>
+        <div class="button">
+         <input type="submit" value="LOGIN" class="button1" style="background: linear-gradient(135deg, #71b7e6, #020202);">
+        </div>
+        <p>Don't have an account? <a href="/register/" style="color: blue;">Register</a></p>
+        <p>Forgot your password? <a href="/forgot/" style="color: blue;">Forgot</a>
+      </form>
+      {% endblock %}
+    </div>
+
+</body>
+</html>

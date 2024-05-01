@@ -1,0 +1,258 @@
+{%  load static %}
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Add Properties</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="{% static 'plugin.css' %}">
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="{% static 'add.css' %}">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'animate.main.css' %}" rel="stylesheet">
+    <link href="{% static 'owl.carousel.min.css' %}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="{% static 'index.css' %}" rel="stylesheet">
+    <link href="{% static 'stylesheet.css' %}" rel="stylesheet">
+    
+</head>
+
+<body>
+    
+<!-- Page Conttent -->
+<main class="page-content section">
+   
+    <!-- Featured Properites Start -->   
+    <div class="add-properites-wrap  pt-md-90 pt-sm-70 pt-xs-60 ">
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="container bg-white">
+                    
+        
+                <div class="row pt-20 ">
+                    <div class="col-md-12">
+                        
+                        <div class="add-property-box step-2 pt-30">
+                            <div class="step-title mb-30">
+                                <h3>Step # 1</h3>
+                            </div>
+                            <div class="information-title mb-30">
+                                <h4>Property Details</h4>
+                            </div>
+                            <div class="details-information-box">
+                                <div class="property-search-wrap">
+                                    
+                                    <div class="row row-10">
+                                    
+                                        <div class="col-lg-3 col-md-6 col-12 mb-25">
+                                            <label>Select status</label>
+                                            <select class="nice-select" name="status">
+                                                <option value="">Rent or Sell?</option>
+                                                <option value="rent">Rent</option>
+                                                <option value="sell">Sell</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-lg-3 col-md-6 col-12 mb-25">
+                                            <label>Types of Property</label>
+                                            <select class="nice-select" name="property">
+                                                <option selected>Property Types</option>
+                                                <option value="apartment">Apartment</option>
+                                                <option value="bungalow">Bungalow</option>
+                                                <option value="duplex">Duplex</option>
+                                                <option value="row-house">Row-House</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-lg-3 col-md-6 col-12 mb-25">
+                                            <label>Property location</label>
+                                            <select class="nice-select" name="location">
+                                                <option selected>Location</option>
+                                                <option value="nikol">Nikol</option>
+                                                <option value="viratnagar">Viratnagar</option>
+                                                <option value="new india-colony">New India-colony</option>
+                                                <option value="naroda">Naroda</option>
+                                                <option value="bapunagar">Bapunagar</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-lg-3 col-md-6 col-12 mb-25">
+                                            <label>BHK</label>
+                                            <select class="nice-select" name="bhk">
+                                                <option selected>Select your Rooms</option>
+                                                <option value="1BHK">1BHK</option>
+                                                <option value="2BHK">2BHK</option>
+                                                <option value="3BHK">3BHK</option>
+                                                <option value="4BHK">4BHK</option>
+                                                <option value="5BHK">5BHK</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-lg-3 col-md-6 col-12 mb-25">
+                                            <label>Price</label>
+                                            <input type="text" name="price" placeholder="INR">
+                                        </div>
+                                    </div>  
+                                    <div class="row row-10 ">
+                                        <div class="col-lg-3 col-md-6 col-12 mb-25">
+                                            <label>Area</label>
+                                            <input type="text" name="area" placeholder="Area (Sqft)">
+                                        </div>
+                                    </div>
+                                    <div class="row row-10 ">
+                                        <div class="col-lg-3 col-md-6 col-12 mb-25">
+                                            <label>Bath</label>
+                                            <select class="nice-select" name="bath">
+                                                <option selected>Select your Bath</option>
+                                                <option value="1BATH">1BATH</option>
+                                                <option value="2BATH">2BATH</option>
+                                                <option value="3BATH">3BATH</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="add-property-box step-3 pt-30">
+                            <div class="step-title">
+                                <h3>Step # 2</h3>
+                            </div>
+                            <div class="image-upload-inner mt-30">
+                                <div class="information-title mb-25">
+                                    <h4>Property Media</h4>
+                                </div>
+                                <div class="image-upload-box">
+                                    <label class="custom-file-upload">
+                                        <span><i class="fa fa-folder-open"></i>Browse Images</span><input type="file" name="media">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <!--step 3-->
+                        <div class="add-property-box step-2 pt-30">
+                            <div class="step-title mb-30">
+                                <h3>Step # 3</h3>
+                            </div>
+                            <div class="information-title mb-30">
+                                <h4>Property Location</h4>
+                            </div>
+                            <div class="details-information-box">
+                                <div class="property-search-wrap">
+                                    <div class="row row-17">
+
+                                        <div class="col-lg-6 col-md-6 col-12 mb-25">
+                                            <label>Address</label>
+                                            <input type="text" name="address" placeholder="Enter Your Address">
+                                        </div>
+
+                                        <div class="col-lg-6 col-md-6 col-12 mb-25">
+                                            <label>City</label>
+                                            <select class="nice-select" name="city">
+                                            <option selected>Ahmedabad</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-lg-6 col-md-6 col-12 mb-25">
+                                            <label>State</label>
+                                            <select class="nice-select" name="state">
+                                            <option selected>Gujarat</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-lg-6 col-md-6 col-12 mb-25">
+                                            <label>Country</label>
+                                            <select class="nice-select" name="country">
+                                            <option selected>India</option>
+                                            </select>
+                                        </div>
+                                    </div>                                    
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--step 4-->
+                        <div class="add-property-box step-2 pt-30">
+                            <div class="step-title mb-30">
+                                <h3>Step # 4</h3>
+                            </div>
+                            <div class="information-title mb-30">
+                                <h4>Contact Information</h4>
+                            </div>
+                            <div class="details-information-box">
+                                <div class="property-search-wrap">
+                                    <div class="row row-17">
+
+                                        <div class="col-lg-6 col-md-6 col-12 mb-25">
+                                            <label>Name</label>
+                                            <input type="text" name="name" placeholder="Enter Your Name">
+                                        </div>
+
+                                        <div class="col-lg-6 col-md-6 col-12 mb-25">
+                                            <label>Email</label>
+                                            <input type="text" name="email" placeholder="Enter Your Email">
+                                        </div>
+
+                                        <div class="col-lg-6 col-md-6 col-12 mb-25">
+                                            <label>Phone No.</label>
+                                            <input type="text" name="phone" placeholder="Enter Your Phone No.">
+                                        </div>
+
+                                        <div class="col-lg-6 col-md-6 col-12 mb-25">
+                                            <label>WhatsApp No.</label>
+                                            <input type="text" name="whatsapp" placeholder="Enter Your WhatsApp No.">
+                                        </div>
+                                    </div>                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="add-property-submit mt-30 mb-45">
+                            <button type="submit">ADD PRPPERTY</button>
+                        </div>
+                        <div class="add-property-submit mt-30 mb-45">
+                            <button style="margin-right: 5px;"><a href="{% url 'index' %}" type="button">cancel</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- Featured Properites End -->  
+
+</main>
+
+<!-- Plugins JS -->
+<script src="{% static 'plugin.js' %}"></script>
+<!-- Map Active JS -->
+<script src="{% static 'active.js' %}"></script>
+<!-- Main JS -->
+<script src="{% static 'add.js' %}"></script>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{% static 'wow.min.js' %}"></script>
+<script src="{% static 'owl.carousel.min.js' %}"></script>
+
+<!-- Template Javascript -->
+<script src="{% static 'main.js' %}"></script>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title>The Dream House</title>
+    <link rel="stylesheet" href="{% static 'change.css' %}">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  {% block content %}
+  <div class="container">
+    {% for message in messages %}
+    
+      <div class="alert">
+        {{ message }}
+      </div>
+    
+    {% endfor %}
+    <div class="title">Change Password</div><br>
+    <div class="content">
+      <form action="" method="post">
+        {% csrf_token %}
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Old password</span>
+            <input type="text" placeholder="Enter your valid username" name="old-password" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="password" placeholder="Enter your new password" name="password" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Confirm Password</span>
+            <input type="password" placeholder="Enter confirm password" name="confirm_password" required>
+          </div>
+          </div>
+        </div>
+        <div class="button">
+         <input type="submit" value="CHANGE PASSWORD" class="button1">
+        </div>
+        <p class="cancel"><a href="/">cancel</a></p>
+      </form>
+      {% endblock %}
+    </div>
+  </div>
+</body>
+</html>
