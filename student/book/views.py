@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.template import loader 
-from .models import Member, Add, Contact, Wishlist
+from .models import Member, Add, Contact
 from django.contrib import messages
 
 def register(request):
@@ -193,8 +193,3 @@ def forgot(request):
                return redirect('login')
           messages.error(request,"invalid username")
      return render(request, 'forgot.html')
-
-def wishlist(request):
-
-
-     return render(request, 'wishlist.html')
