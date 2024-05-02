@@ -90,20 +90,22 @@
                     <div class="property-item rounded overflow-hidden">
                         <div class="position-relative overflow-hidden">
                             <a href="{% url 'details' i.id %}"><img class="img-fluid" src="{{i.image.url}}" alt=""></a>
-                            </div>
+                        </div>
                         <div class="p-4 pb-0">
                                <h5 class="text-primary mb-3">{{i.price}}</h5>
                                <p><i class="fa fa-map-marker-alt text-primary me-2"></i>{{i.address}},&nbsp;{{i.location}}</p>
                         </div>
-                        <div>
-                            <a class="text-center" href="{% url 'wishlist' i.id %}"><p  style="color: #0e2e50;">Add to wishlist</p></a>
+                        <div class="d-flex border-top">
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>{{i.area}}</small>
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>{{i.bhk}}</small>
+                            <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>{{i.bath}}</small>
                         </div>
                     </div>
                 
                 </div>
                 {% endfor %}
             </div>
-                </div>
+         </div>
                 <!-- <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.1s">
                     <a class="btn btn-primary py-3 px-5" href="">Browse More Property</a>
                 </div> -->

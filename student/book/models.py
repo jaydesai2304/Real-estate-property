@@ -50,7 +50,6 @@ class Add(models.Model):
         ('3BATH', '3BATH'),
     ]
 
-   
     status = models.CharField(max_length=10, choices=STATUS, default='')
     property = models.CharField(max_length=10, choices=PROPERTY, default='')
     location = models.CharField(max_length=20,choices=LOCATION, default='')
@@ -77,7 +76,3 @@ class Contact(models.Model):
     lname = models.CharField(max_length=255)
     email = models.EmailField(max_length=70, blank=True)
     message = models.CharField(max_length=255)
-
-class Wishlist(models.Model):
-    Member = models.ForeignKey(Member, on_delete=models.CASCADE)
-    Add = models.ForeignKey(Add, on_delete=models.CASCADE)

@@ -2,7 +2,6 @@ from django.urls import path
 from book import views 
 from django.conf import settings
 from django.conf.urls.static import static
-from django.contrib.auth.decorators import login_required 
 
 urlpatterns = [   
     path('', views.index,name="index"),
@@ -20,7 +19,6 @@ urlpatterns = [
     path('add-property/',views.add, name="add-property"),
     path('rent/',views.rent, name="rent"),
     path('sell/',views.sell, name="sell"),
-    path('wishlist/',views.wishlist, name="wishlist")
    
 ] 
 
